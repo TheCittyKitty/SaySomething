@@ -65,11 +65,17 @@ client.on('interactionCreate', async interaction => {
   if (interaction.commandName === 'revive') {
     const intro = random(intros);
     const prompt = random(prompts);
-    const object = withArticle(random(objects));
+    const objectRaw = random(objects);
+    const object = withArticle(objectRaw);
 
-    const message = `${intro} ${prompt} ${object}.`;
+    const formattedObject = `__**${object}**__`;
 
-    await interaction.reply(message);
+    const message = `@everyone ${intro} ${prompt} ${formattedObject}.`;
+
+    await interaction.reply({
+      content: message,
+      allowedMentions: { parse: ['everyone'] }
+    });
   }
 });
 
