@@ -8,10 +8,10 @@ const client = new Client({
 // --- VARIANTS ---
 
 const intros = [
-  "Don't even think,",
-  "No thought allowed,",
-  "No lying,",
-  "Just say something,",
+  "Don't even think!",
+  "No thought allowed!",
+  "No lying!",
+  "Just say something!",
 ];
 
 const prompts = [
